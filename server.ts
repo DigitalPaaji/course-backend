@@ -32,6 +32,11 @@ app.use(
   express.static(path.join(process.cwd(), "uploads","videos"))
 );
 
+app.get("/",(req,res)=>{
+  res.json({server:"running"})
+}
+)
+
 app.use("/api/v1/admin",adminRoute)
 app.use("/api/v1/course",courseRoute)
 app.use("/api/v1/user",userRoute)
